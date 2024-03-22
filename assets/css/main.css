@@ -276,3 +276,26 @@ ul {
 .map-table tbody tr td:last-child {
   text-align: center;
 }
+
+.mouseOverData {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  position: absolute;
+  border: 6px solid #ddd;
+  pointer-events: none;
+  min-width: 320px;
+}
+.mouseOverData ul {
+  font-size: 14px;
+}
+.mouseOverData ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 0;
+  gap: 15px;
+}
+.mouseOverData ul li span:nth-child(2) {
+  color: #007bfc;
+}

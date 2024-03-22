@@ -27,7 +27,7 @@
                 <div class="col-lg-7">
                     <div class="map-img-wrapper">
                         <div class="single-img">
-                            <button><img src="./assets/img/1.png" alt="map img"></button>
+                            <button onclick="getData('AD')"><img src="./assets/img/1.png" alt="map img"></button>
                         </div>
                         <div class="single-img2">
                             <button><img src="./assets/img/2.png" alt="map img"></button>
@@ -179,7 +179,80 @@
         </div>
     </div>
     <!-- interactive map end -->
+    <div class="mouseOverData">
+        <ul>
+            <li>
+                <span>- Region</span>
+                <span>Adamaoua</span>
+            </li>
+            <li>
+                <span>- Number of Branch Agent:</span>
+                <span>Adamaoua</span>
+            </li>
+            <li>
+                <span>- Region</span>
+                <span>Adamaoua</span>
+            </li>
+            <li>
+                <span>- Region</span>
+                <span>Adamaoua</span>
+            </li>
+        </ul>
+    </div>
 
 </body>
+
+<script>
+    let buttonSelector = document.querySelector('.map-img-wrapper')
+    buttonSelector.addEventListener('click', function(event) {
+        var floatingDiv = document.querySelector('.mouseOverData');
+        var mouseX = event.clientX;
+        var mouseY = event.clientY;
+
+        floatingDiv.style.left = mouseX + 'px';
+        floatingDiv.style.top = mouseY + 'px';
+    });
+    function getData(id) {
+        // Define the URL where the JSON data is located
+        const url = './data.json';
+
+        // Make a fetch request to the URL
+        fetch(url)
+            .then(response => {
+                // Check if the response is successful
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                // Parse the response as JSON
+                return response.json();
+            })
+            .then(data => {
+                // Access the JSON data and do whatever you want with it
+                const ADData = data[id];
+                const region = ADData.region;
+                const numberOfBranchAgent = ADData['Number of Branch Agent'];
+                const numberOfFreeAgent = ADData['Number of Free agent'];
+                const onlineAgents = ADData['Online Agents'];
+                const tableData = ADData.tableData;
+
+                // Accessing values inside tableData
+                const djéremData = tableData.Djérem; // Contains ["110", "1 500"]
+                const faroEtDeoData = tableData['Faro-et-Déo']; // Contains ["84", "2 200"]
+                // You can similarly access other regions' data in the same way
+
+                // Now you can use the retrieved data as needed
+                console.log(region);
+                console.log(numberOfBranchAgent);
+                console.log(numberOfFreeAgent);
+                console.log(onlineAgents);
+                console.log(tableData);
+            })
+            .catch(error => {
+                // Handle any errors that occurred during the fetch
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    }
+
+</script>
 
 </html>

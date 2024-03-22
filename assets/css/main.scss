@@ -262,4 +262,29 @@ ul {
         }
     }
 }
+.mouseOverData {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    position: absolute;
+    border: 6px solid #ddd;
+    pointer-events: none;
+    min-width: 320px;
+    ul {
+        font-size: 14px;
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px 0;
+            gap: 15px;
+            span {
+                &:nth-child(2) {
+                    color: #007bfc;
+
+                }
+            }
+        }
+    }
+}
 // map css style end
