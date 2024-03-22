@@ -267,9 +267,10 @@ ul {
     padding: 10px 20px;
     background-color: #fff;
     position: absolute;
-    border: 6px solid #ddd;
+    border: 4px solid #ddd;
     pointer-events: none;
     min-width: 320px;
+    display: none;
     ul {
         font-size: 14px;
         li {
@@ -279,7 +280,10 @@ ul {
             padding: 2px 0;
             gap: 15px;
             span {
+                display: block;
+
                 &:nth-child(2) {
+                    text-align: left;
                     color: #007bfc;
                     font-weight: 600;
 

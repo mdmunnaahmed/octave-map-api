@@ -1,9 +1,22 @@
 {
   "AD": {
     "region": "Adamaoua",
-    "Number of Branch Agent": "23",
-    "Number of Free agent": "56",
-    "Online Agents": "769",
+    "numberOfBranchAgent": "23",
+    "numberOfFreeAgent": "56",
+    "onlineAgents": "769",
+    "tableData": {
+      "Djérem": ["110", "1 500"],
+      "Faro-et-Déo": ["84", "2 200"],
+      "Mayo-Banyo": ["16", "887"],
+      "Mbéré": ["18", "2 428"],
+      "Vina": ["22", "6 544"]
+    }
+  },
+  "CE": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "23",
+    "numberOfFreeAgent": "56",
+    "onlineAgents": "769",
     "tableData": {
       "Djérem": ["110", "1 500"],
       "Faro-et-Déo": ["84", "2 200"],
