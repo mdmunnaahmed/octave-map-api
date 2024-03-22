@@ -279,7 +279,7 @@ ul {
 
 .mouseOverData {
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: #fff;
   position: absolute;
   border: 6px solid #ddd;
@@ -298,4 +298,5 @@ ul {
 }
 .mouseOverData ul li span:nth-child(2) {
   color: #007bfc;
+  font-weight: 600;
 }
