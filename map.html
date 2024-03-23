@@ -24,34 +24,34 @@
           <div class="col-lg-7">
             <div class="map-img-wrapper">
               <div class="single-img">
-                <button onclick="getData('AD')"><img src="./assets/img/1.png" alt="map img" /></button>
+                <button onclick="getData('EN')"><img src="./assets/img/1.png" alt="map img" /></button>
               </div>
               <div class="single-img2">
-                <button onclick="getData('CD')"><img src="./assets/img/2.png" alt="map img" /></button>
+                <button onclick="getData('NO')"><img src="./assets/img/2.png" alt="map img" /></button>
               </div>
               <div class="single-img3">
-                <button><img src="./assets/img/3.png" alt="map img" /></button>
+                <button onclick="getData('AD')"><img src="./assets/img/3.png" alt="map img" /></button>
               </div>
               <div class="single-img4">
-                <button><img src="./assets/img/4.png" alt="map img" /></button>
+                <button onclick="getData('NW')"><img src="./assets/img/4.png" alt="map img" /></button>
               </div>
               <div class="single-img5">
-                <button><img src="./assets/img/5.png" alt="map img" /></button>
+                <button onclick="getData('OU')"><img src="./assets/img/5.png" alt="map img" /></button>
               </div>
               <div class="single-img6">
-                <button><img src="./assets/img/6.png" alt="map img" /></button>
+                <button onclick="getData('CE')"><img src="./assets/img/6.png" alt="map img" /></button>
               </div>
               <div class="single-img7">
-                <button><img src="./assets/img/7.png" alt="map img" /></button>
+                <button onclick="getData('ES')"><img src="./assets/img/7.png" alt="map img" /></button>
               </div>
               <div class="single-img8">
-                <button><img src="./assets/img/8.png" alt="map img" /></button>
+                <button onclick="getData('SW')"><img src="./assets/img/8.png" alt="map img" /></button>
               </div>
               <div class="single-img9">
-                <button><img src="./assets/img/9.png" alt="map img" /></button>
+                <button onclick="getData('LT')"><img src="./assets/img/9.png" alt="map img" /></button>
               </div>
               <div class="single-img10">
-                <button><img src="./assets/img/10.png" alt="map img" /></button>
+                <button onclick="getData('SU')"><img src="./assets/img/10.png" alt="map img" /></button>
               </div>
             </div>
           </div>
@@ -137,9 +137,9 @@
                     <th>Cash Collected</th>
                   </tr>
                   <tr>
-                    <td class="text-end fw-bold text-black">TOTAL</td>
-                    <td></td>
-                    <td></td>
+                    <td class="text-end fw-bold text-black" style="background-color: #70ad46;">TOTAL</td>
+                    <td style="background-color: #e2f0d9;"></td>
+                    <td style="background-color: #e2f0d9;"></td>
                   </tr>
                 </thead>
                 <tbody>
@@ -174,7 +174,7 @@
   </body>
 
   <script>
-    let buttonSelector = document.querySelector(".map-img-wrapper button");
+    let buttonSelector = document.querySelectorAll(".map-img-wrapper button");
     buttonSelector.addEventListener("click", function (event) {
       var floatingDiv = document.querySelector(".mouseOverData");
       var mouseX = event.clientX;

@@ -1,9 +1,9 @@
 {
   "AD": {
     "region": "Adamaoua",
-    "numberOfBranchAgent": "23",
-    "numberOfFreeAgent": "56",
-    "onlineAgents": "769",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
     "tableData": {
       "Djérem": ["110", "1 500"],
       "Faro-et-Déo": ["84", "2 200"],
@@ -14,15 +14,128 @@
   },
   "CE": {
     "region": "Adamaoua",
-    "numberOfBranchAgent": "23",
-    "numberOfFreeAgent": "56",
-    "onlineAgents": "769",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
     "tableData": {
-      "Djérem": ["110", "1 500"],
-      "Faro-et-Déo": ["84", "2 200"],
-      "Mayo-Banyo": ["16", "887"],
-      "Mbéré": ["18", "2 428"],
-      "Vina": ["22", "6 544"]
+      "Haute-Sanaga": ["110", "1 500"],
+      "Lekié": ["84", "2 200"],
+      "Mbam-et-Inoubou": ["16", "887"],
+      "Mbam-et-Kim": ["18", "2 428"],
+      "Méfou-et-Afamba": ["22", "6 544"],
+      "Méfou-et-Akono": ["0", "0"],
+      "Mfoundi": ["84", "2 200"],
+      "Nyong-et-Kellé": ["16", "837"],
+      "Nyong-et-Mfoumou": ["08", "5 884"],
+      "Nyong-et-Soo": ["84", "2 200"]
+    }
+  },
+  "ES": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
+    "tableData": {
+      "Boumba-et-Ngoko": ["110", "1 500"],
+      "Haut-Nyong": ["84", "2 200"],
+      "Kadey": ["16", "887"],
+      "Lom-et-Djérem": ["18", "2 428"]
+    }
+  },
+  "EN": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
+    "tableData": {
+      "Diamaré": ["110", "1 500"],
+      "Logone-et-Chari": ["84", "2 200"],
+      "Mayo-Danay": ["84", "2 200"],
+      "Mayo-Kani": ["16", "837"],
+      "Mayo-Sava": ["18", "2 428"],
+      "Méfou-et-Akono": ["84", "2 200"],
+      "Mayo-Tsanaga": ["16", "837"]
+    }
+  },
+  "LT": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
+    "tableData": {
+      "Moungo": ["110", "1 500"],
+      "Nkam": ["84", "2 200"],
+      "Sanaga-Maritime": ["16", "887"],
+      "Wouri": ["18", "2 428"]
+    }
+  },
+  "NO": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
+    "tableData": {
+      "Bénoué": ["110", "1 500"],
+      "Faro": ["84", "2 200"],
+      "Mayo-Louti": ["16", "887"],
+      "Mayo-Rey": ["18", "2 428"]
+    }
+  },
+  "NW": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
+    "tableData": {
+      "Boyo": ["110", "1 500"],
+      "Bui": ["84", "2 200"],
+      "Donga-Mantung": ["16", "887"],
+      "Menchum": ["18", "2 428"],
+      "Mezam": ["110", "1 500"],
+      "Momo": ["84", "2 200"],
+      "Ngo-Ketunjia": ["16", "837"]
+    }
+  },
+  "OU": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
+    "tableData": {
+      "Bamboutos": ["110", "1 500"],
+      "Haut-Nkam": ["84", "2 200"],
+      "Hauts-Plateaux": ["16", "887"],
+      "Koung-Khi": ["18", "2 428"],
+      "Menoua": ["110", "1 500"],
+      "Mifi": ["84", "2 200"],
+      "Ndé": ["16", "837"],
+      "Noun": ["18", "2 428"]
+    }
+  },
+  "SU": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
+    "tableData": {
+      "Dja-et-Lobo": ["110", "1 500"],
+      "Mvila": ["84", "2 200"],
+      "Océan": ["16", "837"],
+      "Vallée-du-Ntem": ["18", "2 428"]
+    }
+  },
+  "SW": {
+    "region": "Adamaoua",
+    "numberOfBranchAgent": "",
+    "numberOfFreeAgent": "",
+    "onlineAgents": "",
+    "tableData": {
+      "Fako": ["110", "1 500"],
+      "Koupé-Manengouba": ["84", "2 200"],
+      "Lebialem": ["16", "837"],
+      "Manyu": ["18", "2 428"],
+      "Meme": ["84", "2 200"],
+      "Ndian": ["18", "837"]
     }
   }
 }
