@@ -24,34 +24,34 @@
           <div class="col-lg-7">
             <div class="map-img-wrapper">
               <div class="single-img">
-                <button onclick="getData('EN')"><img src="./assets/img/1.png" alt="map img" /></button>
+                <button onclick="getData('EN')" data-id="EN"><img src="./assets/img/1.png" alt="EN" /></button>
               </div>
               <div class="single-img2">
-                <button onclick="getData('NO')"><img src="./assets/img/2.png" alt="map img" /></button>
+                <button onclick="getData('NO')" data-id="NO"><img src="./assets/img/2.png" alt="NO" /></button>
               </div>
               <div class="single-img3">
-                <button onclick="getData('AD')"><img src="./assets/img/3.png" alt="map img" /></button>
+                <button onclick="getData('AD')" data-id="AD"><img src="./assets/img/3.png" alt="AD" /></button>
               </div>
               <div class="single-img4">
-                <button onclick="getData('NW')"><img src="./assets/img/4.png" alt="map img" /></button>
+                <button onclick="getData('NW')" data-id="NW"><img src="./assets/img/4.png" alt="NW" /></button>
               </div>
               <div class="single-img5">
-                <button onclick="getData('OU')"><img src="./assets/img/5.png" alt="map img" /></button>
+                <button onclick="getData('OU')" data-id="OU"><img src="./assets/img/5.png" alt="OU" /></button>
               </div>
               <div class="single-img6">
-                <button onclick="getData('CE')"><img src="./assets/img/6.png" alt="map img" /></button>
+                <button onclick="getData('CE')" data-id="CE"><img src="./assets/img/6.png" alt="CE" /></button>
               </div>
               <div class="single-img7">
-                <button onclick="getData('ES')"><img src="./assets/img/7.png" alt="map img" /></button>
+                <button onclick="getData('ES')" data-id="ES"><img src="./assets/img/7.png" alt="ES" /></button>
               </div>
               <div class="single-img8">
-                <button onclick="getData('SW')"><img src="./assets/img/8.png" alt="map img" /></button>
+                <button onclick="getData('SW')" data-id="SW"><img src="./assets/img/8.png" alt="SW" /></button>
               </div>
               <div class="single-img9">
-                <button onclick="getData('LT')"><img src="./assets/img/9.png" alt="map img" /></button>
+                <button onclick="getData('LT')" data-id="LT"><img src="./assets/img/9.png" alt="LT" /></button>
               </div>
               <div class="single-img10">
-                <button onclick="getData('SU')"><img src="./assets/img/10.png" alt="map img" /></button>
+                <button onclick="getData('SU')" data-id="SU"><img src="./assets/img/10.png" alt="SU" /></button>
               </div>
             </div>
           </div>
@@ -137,13 +137,12 @@
                     <th>Cash Collected</th>
                   </tr>
                   <tr>
-                    <td class="text-end fw-bold text-black" style="background-color: #70ad46;">TOTAL</td>
-                    <td style="background-color: #e2f0d9;"></td>
-                    <td style="background-color: #e2f0d9;"></td>
+                    <td class="text-end fw-bold text-black" style="background-color: #70ad46">TOTAL</td>
+                    <td style="background-color: #e2f0d9"></td>
+                    <td style="background-color: #e2f0d9"></td>
                   </tr>
                 </thead>
-                <tbody>
-                </tbody>
+                <tbody></tbody>
               </table>
             </div>
           </div>
@@ -174,16 +173,63 @@
   </body>
 
   <script>
-    let buttonSelector = document.querySelectorAll(".map-img-wrapper button");
-    buttonSelector.addEventListener("click", function (event) {
-      var floatingDiv = document.querySelector(".mouseOverData");
-      var mouseX = event.clientX;
-      var mouseY = event.clientY;
+    let buttonSelectors = document.querySelectorAll(".map-img-wrapper button");
+    buttonSelectors.forEach(function (button) {
+      let id = button.getAttribute("data-id");
+      button.addEventListener("mouseover", function (event) {
+        var floatingDiv = document.querySelector(".mouseOverData");
+        var mouseX = event.clientX;
+        var mouseY = event.clientY;
 
-      floatingDiv.style.left = mouseX + "px";
-      floatingDiv.style.top = mouseY + "px";
-      floatingDiv.style.display = "block";
+        floatingDiv.style.left = mouseX + "px";
+        floatingDiv.style.top = mouseY + "px";
+        floatingDiv.style.display = "block";
+
+        const url = "./data.json";
+
+        // Make a fetch request to the URL
+        fetch(url)
+          .then((response) => {
+            // Check if the response is successful
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            // Parse the response as JSON
+            return response.json();
+          })
+          .then((data) => {
+            let re = document.querySelector("#region");
+            let noba = document.querySelector("#numberOfBranchAgent");
+            let nofa = document.querySelector("#numberOfFreeAgent");
+            let oa = document.querySelector("#onlineAgents");
+            // Access the JSON data and do whatever you want with it
+            const ADData = data[id];
+            const region = ADData.region;
+            const numberOfBranchAgent = ADData["numberOfBranchAgent"];
+            const numberOfFreeAgent = ADData["numberOfFreeAgent"];
+            const onlineAgents = ADData["onlineAgents"];
+            re.innerHTML = region;
+            noba.innerHTML = numberOfBranchAgent;
+            nofa.innerHTML = numberOfFreeAgent;
+            oa.innerHTML = onlineAgents;
+          })
+          .catch((error) => {
+            // Handle any errors that occurred during the fetch
+            // console.error("There was a problem with the fetch operation:", error);
+            let re = document.querySelector("#region");
+            let noba = document.querySelector("#numberOfBranchAgent");
+            let nofa = document.querySelector("#numberOfFreeAgent");
+            let oa = document.querySelector("#onlineAgents");
+            re.innerHTML = "";
+            noba.innerHTML = "";
+            nofa.innerHTML = "";
+            oa.innerHTML = "";
+            var floatingDiv = document.querySelector(".mouseOverData");
+            floatingDiv.style.display = "none";
+          });
+      });
     });
+
     function getData(id) {
       // Define the URL where the JSON data is located
       const url = "./data.json";
@@ -231,19 +277,19 @@
         })
         .catch((error) => {
           // Handle any errors that occurred during the fetch
-          console.error("There was a problem with the fetch operation:", error);
+          // console.error("There was a problem with the fetch operation:", error);
           let re = document.querySelector("#region");
           let noba = document.querySelector("#numberOfBranchAgent");
           let nofa = document.querySelector("#numberOfFreeAgent");
           let oa = document.querySelector("#onlineAgents");
-          re.innerHTML = '';
-          noba.innerHTML = '';
-          nofa.innerHTML = '';
-          oa.innerHTML = '';
+          re.innerHTML = "";
+          noba.innerHTML = "";
+          nofa.innerHTML = "";
+          oa.innerHTML = "";
           const table = document.querySelector("#dataTable tbody");
-          table.innerHTML = ''
+          table.innerHTML = "";
           var floatingDiv = document.querySelector(".mouseOverData");
-          floatingDiv.style.display = 'none'
+          floatingDiv.style.display = "none";
         });
     }
   </script>
