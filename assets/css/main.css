@@ -120,6 +120,13 @@ ul {
   padding: 0;
   margin: 0;
 }
+.map-img-wrapper button img {
+  transition: all 0.3s linear;
+  filter: brightness(100%);
+}
+.map-img-wrapper button img:hover {
+  filter: brightness(80%);
+}
 .map-img-wrapper .single-img2 {
   position: absolute;
   left: -20.8%;
