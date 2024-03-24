@@ -370,6 +370,11 @@ ul {
   margin-top: 30px;
   margin-bottom: 70px;
 }
+@media (max-width: 575px) {
+  .map-table {
+    font-size: 14px;
+  }
+}
 .map-table th {
   background-color: #70ad46;
   color: #fff;
@@ -409,8 +414,18 @@ ul {
   visibility: hidden;
   transition: all 0.3s;
 }
+@media (max-width: 575px) {
+  .mouseOverData {
+    min-width: 300px;
+  }
+}
 .mouseOverData ul {
   font-size: 14px;
+}
+@media (max-width: 575px) {
+  .mouseOverData ul {
+    font-size: 13px;
+  }
 }
 .mouseOverData ul li {
   display: flex;

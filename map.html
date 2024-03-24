@@ -1,244 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <!-- font link -->
+    <link href="https://fonts.cdnfonts.com/css/sf-ui-text-2" rel="stylesheet" />
+    <!-- bootstrap 5 -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Interactive map</title>
+  </head>
 
-  <!-- favicon link -->
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-  <!-- font link -->
-  <link href="https://fonts.cdnfonts.com/css/sf-ui-text-2" rel="stylesheet" />
-  <!-- bootstrap 5 -->
-  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-  <!-- main css -->
-  <link rel="stylesheet" href="./assets/css/main.css" />
-  <title>Interactive map</title>
-</head>
-
-<body>
-  <!-- interactive map start -->
-  <div class="interactive-map-wrapper">
-    <div class="custom-container">
-      <div class="row">
-        <div class="col-lg-7">
-          <div class="map-img-wrapper">
-            <div class="single-img">
-              <button><img data-id="EN" src="./assets/img/1.png" alt="EN" /></button>
-            </div>
-            <div class="single-img2">
-              <button><img data-id="NO" src="./assets/img/2.png" alt="NO" /></button>
-            </div>
-            <div class="single-img3">
-              <button><img data-id="AD" src="./assets/img/3.png" alt="AD" /></button>
-            </div>
-            <div class="single-img4">
-              <button><img data-id="NW" src="./assets/img/4.png" alt="NW" /></button>
-            </div>
-            <div class="single-img5" style="z-index: 1">
-              <button><img data-id="OU" src="./assets/img/5.png" alt="OU" /></button>
-            </div>
-            <div class="single-img6" style="z-index: -1">
-              <button><img data-id="CE" src="./assets/img/6.png" alt="CE" /></button>
-            </div>
-            <div class="single-img7">
-              <button><img data-id="ES" src="./assets/img/7.png" alt="ES" /></button>
-            </div>
-            <div class="single-img8">
-              <button><img data-id="SW" src="./assets/img/8.png" alt="SW" /></button>
-            </div>
-            <div class="single-img9">
-              <button><img data-id="LT" src="./assets/img/9.png" alt="LT" /></button>
-            </div>
-            <div class="single-img10">
-              <button><img data-id="SU" src="./assets/img/10.png" alt="SU" /></button>
+  <body>
+    <!-- interactive map start -->
+    <div class="interactive-map-wrapper">
+      <div class="custom-container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="map-img-wrapper">
+              <div class="single-img">
+                <button><img data-id="EN" src="./assets/img/1.png" alt="EN" /></button>
+              </div>
+              <div class="single-img2">
+                <button><img data-id="NO" src="./assets/img/2.png" alt="NO" /></button>
+              </div>
+              <div class="single-img3">
+                <button><img data-id="AD" src="./assets/img/3.png" alt="AD" /></button>
+              </div>
+              <div class="single-img4">
+                <button><img data-id="NW" src="./assets/img/4.png" alt="NW" /></button>
+              </div>
+              <div class="single-img5" style="z-index: 1">
+                <button><img data-id="OU" src="./assets/img/5.png" alt="OU" /></button>
+              </div>
+              <div class="single-img6" style="z-index: -1">
+                <button><img data-id="CE" src="./assets/img/6.png" alt="CE" /></button>
+              </div>
+              <div class="single-img7">
+                <button><img data-id="ES" src="./assets/img/7.png" alt="ES" /></button>
+              </div>
+              <div class="single-img8">
+                <button><img data-id="SW" src="./assets/img/8.png" alt="SW" /></button>
+              </div>
+              <div class="single-img9">
+                <button><img data-id="LT" src="./assets/img/9.png" alt="LT" /></button>
+              </div>
+              <div class="single-img10">
+                <button><img data-id="SU" src="./assets/img/10.png" alt="SU" /></button>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="map-content">
-            <div class="realtime-wrapper d-flex flex-wrap mb-4">
-              <div class="realtime-text text-primary">Realtime</div>
-              <div>
-                <select class="form-select form--select" aria-label="Default select example">
-                  <option value="2" selected>No</option>
-                  <option value="1">Yes</option>
-                </select>
+          <div class="col-lg-5">
+            <div class="map-content">
+              <div class="realtime-wrapper d-flex flex-wrap mb-4">
+                <div class="realtime-text text-primary">Realtime</div>
+                <div>
+                  <select class="form-select form--select" aria-label="Default select example">
+                    <option value="2" selected>No</option>
+                    <option value="1">Yes</option>
+                  </select>
+                </div>
+                <div>
+                  <select class="form-select form--select" aria-label="Default select example">
+                    <option selected>Custom</option>
+                    <option value="1">Last minute</option>
+                    <option value="2">Last hour</option>
+                    <option value="3">Last day</option>
+                    <option value="4">Last week</option>
+                    <option value="5">Last month</option>
+                    <option value="6">Last custom</option>
+                  </select>
+                </div>
               </div>
-              <div>
-                <select class="form-select form--select" aria-label="Default select example">
-                  <option selected>Custom</option>
-                  <option value="1">Last minute</option>
-                  <option value="2">Last hour</option>
-                  <option value="3">Last day</option>
-                  <option value="4">Last week</option>
-                  <option value="5">Last month</option>
-                  <option value="6">Last custom</option>
-                </select>
-              </div>
-            </div>
 
-            <div class="card-wrapper">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="card-item">
-                    <div class="card-item__header">
-                      <h5 class="title">Total Sells</h5>
-                      <button class="dot-img"><img src="./assets/img/dot.svg" alt="dot" /></button>
-                    </div>
-                    <div class="card-item__content">
-                      <div class="thumb">
-                        <img src="./assets/img/d1.png" alt="dollar img" />
+              <div class="card-wrapper">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="card-item">
+                      <div class="card-item__header">
+                        <h5 class="title">Total Sells</h5>
+                        <button class="dot-img"><img src="./assets/img/dot.svg" alt="dot" /></button>
                       </div>
-                      <div class="content">
-                        <h4>12,463</h4>
-                        <p>Compared to Jan 2023</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card-item">
-                    <div class="card-item__header">
-                      <h5 class="title">Orders Value</h5>
-                      <button class="dot-img"><img src="./assets/img/dot.svg" alt="dot" /></button>
-                    </div>
-                    <div class="card-item__content">
-                      <div class="thumb">
-                        <img src="./assets/img/d1.png" alt="dollar img" />
-                      </div>
-                      <div class="content">
-                        <h4>78,596</h4>
-                        <p>Compared to Jan 2023</p>
+                      <div class="card-item__content">
+                        <div class="thumb">
+                          <img src="./assets/img/d1.png" alt="dollar img" />
+                        </div>
+                        <div class="content">
+                          <h4>12,463</h4>
+                          <p>Compared to Jan 2023</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card-item">
-                    <div class="card-item__header">
-                      <h5 class="title">Daliy Orders</h5>
-                      <button class="dot-img"><img src="./assets/img/dot.svg" alt="dot" /></button>
-                    </div>
-                    <div class="card-item__content">
-                      <div class="thumb">
-                        <img src="./assets/img/d1.png" alt="dollar img" />
+                  <div class="col-sm-6">
+                    <div class="card-item">
+                      <div class="card-item__header">
+                        <h5 class="title">Orders Value</h5>
+                        <button class="dot-img"><img src="./assets/img/dot.svg" alt="dot" /></button>
                       </div>
-                      <div class="content">
-                        <h4>95,789</h4>
-                        <p>Compared to Jan 2023</p>
+                      <div class="card-item__content">
+                        <div class="thumb">
+                          <img src="./assets/img/d1.png" alt="dollar img" />
+                        </div>
+                        <div class="content">
+                          <h4>78,596</h4>
+                          <p>Compared to Jan 2023</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="card-item">
-                    <div class="card-item__header">
-                      <h5 class="title">Daliy Revenue</h5>
-                      <button class="dot-img"><img src="./assets/img/dot.svg" alt="dot" /></button>
-                    </div>
-                    <div class="card-item__content">
-                      <div class="thumb">
-                        <img src="./assets/img/d1.png" alt="dollar img" />
+                  <div class="col-sm-6">
+                    <div class="card-item">
+                      <div class="card-item__header">
+                        <h5 class="title">Daliy Orders</h5>
+                        <button class="dot-img"><img src="./assets/img/dot.svg" alt="dot" /></button>
                       </div>
-                      <div class="content">
-                        <h4>41,954</h4>
-                        <p>Compared to Jan 2023</p>
+                      <div class="card-item__content">
+                        <div class="thumb">
+                          <img src="./assets/img/d1.png" alt="dollar img" />
+                        </div>
+                        <div class="content">
+                          <h4>95,789</h4>
+                          <p>Compared to Jan 2023</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="card-item">
+                      <div class="card-item__header">
+                        <h5 class="title">Daliy Revenue</h5>
+                        <button class="dot-img"><img src="./assets/img/dot.svg" alt="dot" /></button>
+                      </div>
+                      <div class="card-item__content">
+                        <div class="thumb">
+                          <img src="./assets/img/d1.png" alt="dollar img" />
+                        </div>
+                        <div class="content">
+                          <h4>41,954</h4>
+                          <p>Compared to Jan 2023</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <table class="table map-table" id="dataTable">
+                <thead>
+                  <tr>
+                    <th>Departments</th>
+                    <th>No of Payment</th>
+                    <th>Cash Collected</th>
+                  </tr>
+                  <tr>
+                    <td class="text-end fw-bold text-black" style="background-color: #70ad46">TOTAL</td>
+                    <td style="background-color: #e2f0d9"></td>
+                    <td style="background-color: #e2f0d9"></td>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
             </div>
-            <table class="table map-table" id="dataTable">
-              <thead>
-                <tr>
-                  <th>Departments</th>
-                  <th>No of Payment</th>
-                  <th>Cash Collected</th>
-                </tr>
-                <tr>
-                  <td class="text-end fw-bold text-black" style="background-color: #70ad46">TOTAL</td>
-                  <td style="background-color: #e2f0d9"></td>
-                  <td style="background-color: #e2f0d9"></td>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- interactive map end -->
-  <div class="mouseOverData d-none">
-    <ul>
-      <li>
-        <span>- Region:</span>
-        <span id="region"></span>
-      </li>
-      <li>
-        <span>- Number of Branch Agent:</span>
-        <span id="numberOfBranchAgent"></span>
-      </li>
-      <li>
-        <span>- Number of Free agent:</span>
-        <span id="numberOfFreeAgent"></span>
-      </li>
-      <li>
-        <span>- Online Agents:</span>
-        <span id="onlineAgents"></span>
-      </li>
-    </ul>
-  </div>
-</body>
+    <!-- interactive map end -->
+    <div class="mouseOverData">
+      <ul>
+        <li>
+          <span>- Region:</span>
+          <span id="region"></span>
+        </li>
+        <li>
+          <span>- Number of Branch Agent:</span>
+          <span id="numberOfBranchAgent"></span>
+        </li>
+        <li>
+          <span>- Number of Free agent:</span>
+          <span id="numberOfFreeAgent"></span>
+        </li>
+        <li>
+          <span>- Online Agents:</span>
+          <span id="onlineAgents"></span>
+        </li>
+      </ul>
+    </div>
+  </body>
 
-<script>
-  // Assuming 'images' is an array containing references to your PNG images
+  <script>
+    // Assuming 'images' is an array containing references to your PNG images
 
-  let images = document.querySelectorAll(".map-img-wrapper button img");
-  images.forEach((image, index) => {
-    image.addEventListener("click", (event) => {
-      const clickedImage = event.target; // Get the clicked <img> element
-      const imageDataId = clickedImage.getAttribute("data-id"); // Get the value of the 'data-id' attribute
+    let images = document.querySelectorAll(".map-img-wrapper button img");
+    images.forEach((image, index) => {
+      image.addEventListener("click", (event) => {
+        const clickedImage = event.target; // Get the clicked <img> element
+        const imageDataId = clickedImage.getAttribute("data-id"); // Get the value of the 'data-id' attribute
 
-      const clickedX = event.offsetX; // X-coordinate of click relative to the image
-      const clickedY = event.offsetY; // Y-coordinate of click relative to the image
+        const clickedX = event.offsetX; // X-coordinate of click relative to the image
+        const clickedY = event.offsetY; // Y-coordinate of click relative to the image
 
-      // Create an off-screen canvas and draw the image onto it
-      const canvas = document.createElement("canvas");
-      const context = canvas.getContext("2d");
-      canvas.width = image.width;
-      canvas.height = image.height;
-      context.drawImage(image, 0, 0);
+        // Create an off-screen canvas and draw the image onto it
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        context.drawImage(image, 0, 0);
 
-      // Get the pixel data of the clicked point
-      const pixelData = context.getImageData(clickedX, clickedY, 1, 1).data;
+        // Get the pixel data of the clicked point
+        const pixelData = context.getImageData(clickedX, clickedY, 1, 1).data;
 
-      // Check if the clicked point is within the non-transparent area (assuming alpha channel is 0 for transparent pixels)
-      if (pixelData[3] !== 0) {
-        // Add your logic to handle the click event here
-        getData(imageDataId);
-      }
+        // Check if the clicked point is within the non-transparent area (assuming alpha channel is 0 for transparent pixels)
+        if (pixelData[3] !== 0) {
+          // Add your logic to handle the click event here
+          getData(imageDataId);
+        }
+      });
     });
-  });
 
-  images.forEach(function (button) {
-    let id = button.getAttribute("data-id");
-    button.addEventListener("mouseover", function (event) {
-      var floatingDiv = document.querySelector(".mouseOverData");
-      var mouseX = event.clientX + window.scrollX;
-      var mouseY = event.clientY + window.scrollY;
+    images.forEach(function (button) {
+      let id = button.getAttribute("data-id");
+      button.addEventListener("mouseover", function (event) {
+        var floatingDiv = document.querySelector(".mouseOverData");
+        var mouseX = event.clientX + window.scrollX;
+        var mouseY = event.clientY + window.scrollY;
 
-      floatingDiv.style.left = mouseX + "px";
-      floatingDiv.style.top = mouseY + "px";
+        // Adjust the x position to keep the floating div within the viewport
+        if (mouseX + floatingDiv.offsetWidth > window.innerWidth) {
+          mouseX = window.innerWidth - floatingDiv.offsetWidth;
+        } else if (mouseX < 0) {
+          mouseX = 0;
+        }
 
-      setTimeout(function () {
-        floatingDiv.style.opacity = "1";
-        floatingDiv.style.visibility = "visible";
-      }, 200);
+        floatingDiv.style.left = mouseX + "px";
+        floatingDiv.style.top = mouseY + "px";
 
+        setTimeout(function () {
+          floatingDiv.style.opacity = "1";
+          floatingDiv.style.visibility = "visible";
+        }, 200);
+
+        const url = "./data.json";
+
+        // Make a fetch request to the URL
+        fetch(url)
+          .then((response) => {
+            // Check if the response is successful
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            // Parse the response as JSON
+            return response.json();
+          })
+          .then((data) => {
+            let re = document.querySelector("#region");
+            let noba = document.querySelector("#numberOfBranchAgent");
+            let nofa = document.querySelector("#numberOfFreeAgent");
+            let oa = document.querySelector("#onlineAgents");
+            // Access the JSON data and do whatever you want with it
+            const ADData = data[id];
+            const region = ADData.region;
+            const numberOfBranchAgent = ADData["numberOfBranchAgent"];
+            const numberOfFreeAgent = ADData["numberOfFreeAgent"];
+            const onlineAgents = ADData["onlineAgents"];
+            re.innerHTML = region;
+            noba.innerHTML = numberOfBranchAgent;
+            nofa.innerHTML = numberOfFreeAgent;
+            oa.innerHTML = onlineAgents;
+          })
+          .catch((error) => {
+            // Handle any errors that occurred during the fetch
+            // console.error("There was a problem with the fetch operation:", error);
+            let re = document.querySelector("#region");
+            let noba = document.querySelector("#numberOfBranchAgent");
+            let nofa = document.querySelector("#numberOfFreeAgent");
+            let oa = document.querySelector("#onlineAgents");
+            re.innerHTML = "";
+            noba.innerHTML = "";
+            nofa.innerHTML = "";
+            oa.innerHTML = "";
+            var floatingDiv = document.querySelector(".mouseOverData");
+            floatingDiv.style.opacity = "0";
+            floatingDiv.style.visibility = "hidden";
+          });
+      });
+      button.addEventListener("mouseleave", function (event) {
+        var floatingDiv = document.querySelector(".mouseOverData");
+        setTimeout(function () {
+          floatingDiv.style.opacity = "0";
+          floatingDiv.style.visibility = "hidden";
+        }, 199);
+      });
+    });
+
+    function getData(id) {
+      // Define the URL where the JSON data is located
       const url = "./data.json";
 
       // Make a fetch request to the URL
@@ -266,6 +327,21 @@
           noba.innerHTML = numberOfBranchAgent;
           nofa.innerHTML = numberOfFreeAgent;
           oa.innerHTML = onlineAgents;
+
+          //   table data print
+          const table = document.querySelector("#dataTable tbody");
+          const tableData = ADData.tableData;
+          // Clear existing table rows
+          table.innerHTML = "";
+
+          // Loop through the tableData and create table rows
+          Object.entries(tableData).forEach(([region, values]) => {
+            const row = table.insertRow();
+            row.insertCell(0).textContent = region;
+            values.forEach((value, index) => {
+              row.insertCell(index + 1).textContent = value;
+            });
+          });
         })
         .catch((error) => {
           // Handle any errors that occurred during the fetch
@@ -278,82 +354,11 @@
           noba.innerHTML = "";
           nofa.innerHTML = "";
           oa.innerHTML = "";
+          const table = document.querySelector("#dataTable tbody");
+          table.innerHTML = "";
           var floatingDiv = document.querySelector(".mouseOverData");
-          floatingDiv.style.opacity = "0";
-          floatingDiv.style.visibility = "hidden";
+          floatingDiv.style.display = "none";
         });
-    });
-    button.addEventListener("mouseleave", function (event) {
-      var floatingDiv = document.querySelector(".mouseOverData");
-      setTimeout(function () {
-        floatingDiv.style.opacity = "0";
-        floatingDiv.style.visibility = "hidden";
-      }, 199);
-    });
-  });
-
-  function getData(id) {
-    // Define the URL where the JSON data is located
-    const url = "./data.json";
-
-    // Make a fetch request to the URL
-    fetch(url)
-      .then((response) => {
-        // Check if the response is successful
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        // Parse the response as JSON
-        return response.json();
-      })
-      .then((data) => {
-        let re = document.querySelector("#region");
-        let noba = document.querySelector("#numberOfBranchAgent");
-        let nofa = document.querySelector("#numberOfFreeAgent");
-        let oa = document.querySelector("#onlineAgents");
-        // Access the JSON data and do whatever you want with it
-        const ADData = data[id];
-        const region = ADData.region;
-        const numberOfBranchAgent = ADData["numberOfBranchAgent"];
-        const numberOfFreeAgent = ADData["numberOfFreeAgent"];
-        const onlineAgents = ADData["onlineAgents"];
-        re.innerHTML = region;
-        noba.innerHTML = numberOfBranchAgent;
-        nofa.innerHTML = numberOfFreeAgent;
-        oa.innerHTML = onlineAgents;
-
-        //   table data print
-        const table = document.querySelector("#dataTable tbody");
-        const tableData = ADData.tableData;
-        // Clear existing table rows
-        table.innerHTML = "";
-
-        // Loop through the tableData and create table rows
-        Object.entries(tableData).forEach(([region, values]) => {
-          const row = table.insertRow();
-          row.insertCell(0).textContent = region;
-          values.forEach((value, index) => {
-            row.insertCell(index + 1).textContent = value;
-          });
-        });
-      })
-      .catch((error) => {
-        // Handle any errors that occurred during the fetch
-        // console.error("There was a problem with the fetch operation:", error);
-        let re = document.querySelector("#region");
-        let noba = document.querySelector("#numberOfBranchAgent");
-        let nofa = document.querySelector("#numberOfFreeAgent");
-        let oa = document.querySelector("#onlineAgents");
-        re.innerHTML = "";
-        noba.innerHTML = "";
-        nofa.innerHTML = "";
-        oa.innerHTML = "";
-        const table = document.querySelector("#dataTable tbody");
-        table.innerHTML = "";
-        var floatingDiv = document.querySelector(".mouseOverData");
-        floatingDiv.style.display = "none";
-      });
-  }
-</script>
-
+    }
+  </script>
 </html>
