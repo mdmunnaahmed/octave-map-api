@@ -24,34 +24,34 @@
           <div class="col-lg-7">
             <div class="map-img-wrapper">
               <div class="single-img">
-                <button onclick="getData('EN')" data-id="EN"><img src="./assets/img/1.png" alt="EN" /></button>
+                <button><img data-id="EN" src="./assets/img/1.png" alt="EN" /></button>
               </div>
               <div class="single-img2">
-                <button onclick="getData('NO')" data-id="NO"><img src="./assets/img/2.png" alt="NO" /></button>
+                <button><img data-id="NO" src="./assets/img/2.png" alt="NO" /></button>
               </div>
               <div class="single-img3">
-                <button onclick="getData('AD')" data-id="AD"><img src="./assets/img/3.png" alt="AD" /></button>
+                <button><img data-id="AD" src="./assets/img/3.png" alt="AD" /></button>
               </div>
               <div class="single-img4">
-                <button onclick="getData('NW')" data-id="NW"><img src="./assets/img/4.png" alt="NW" /></button>
+                <button><img data-id="NW" src="./assets/img/4.png" alt="NW" /></button>
               </div>
-              <div class="single-img5">
-                <button onclick="getData('OU')" data-id="OU"><img src="./assets/img/5.png" alt="OU" /></button>
+              <div class="single-img5" style="z-index: 1">
+                <button><img data-id="OU" src="./assets/img/5.png" alt="OU" /></button>
               </div>
-              <div class="single-img6">
-                <button onclick="getData('CE')" data-id="CE"><img src="./assets/img/6.png" alt="CE" /></button>
+              <div class="single-img6" style="z-index: -1">
+                <button><img data-id="CE" src="./assets/img/6.png" alt="CE" /></button>
               </div>
               <div class="single-img7">
-                <button onclick="getData('ES')" data-id="ES"><img src="./assets/img/7.png" alt="ES" /></button>
+                <button><img data-id="ES" src="./assets/img/7.png" alt="ES" /></button>
               </div>
               <div class="single-img8">
-                <button onclick="getData('SW')" data-id="SW"><img src="./assets/img/8.png" alt="SW" /></button>
+                <button><img data-id="SW" src="./assets/img/8.png" alt="SW" /></button>
               </div>
               <div class="single-img9">
-                <button onclick="getData('LT')" data-id="LT"><img src="./assets/img/9.png" alt="LT" /></button>
+                <button><img data-id="LT" src="./assets/img/9.png" alt="LT" /></button>
               </div>
               <div class="single-img10">
-                <button onclick="getData('SU')" data-id="SU"><img src="./assets/img/10.png" alt="SU" /></button>
+                <button><img data-id="SU" src="./assets/img/10.png" alt="SU" /></button>
               </div>
             </div>
           </div>
@@ -173,17 +173,49 @@
   </body>
 
   <script>
-    let buttonSelectors = document.querySelectorAll(".map-img-wrapper button");
-    buttonSelectors.forEach(function (button) {
+    // Assuming 'images' is an array containing references to your PNG images
+
+    let images = document.querySelectorAll(".map-img-wrapper button img");
+    images.forEach((image, index) => {
+      image.addEventListener("click", (event) => {
+        const clickedImage = event.target; // Get the clicked <img> element
+        const imageDataId = clickedImage.getAttribute("data-id"); // Get the value of the 'data-id' attribute
+
+        const clickedX = event.offsetX; // X-coordinate of click relative to the image
+        const clickedY = event.offsetY; // Y-coordinate of click relative to the image
+
+        // Create an off-screen canvas and draw the image onto it
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        context.drawImage(image, 0, 0);
+
+        // Get the pixel data of the clicked point
+        const pixelData = context.getImageData(clickedX, clickedY, 1, 1).data;
+
+        // Check if the clicked point is within the non-transparent area (assuming alpha channel is 0 for transparent pixels)
+        if (pixelData[3] !== 0) {
+          // Add your logic to handle the click event here
+          getData(imageDataId);
+        }
+      });
+    });
+
+    images.forEach(function (button) {
       let id = button.getAttribute("data-id");
       button.addEventListener("mouseover", function (event) {
         var floatingDiv = document.querySelector(".mouseOverData");
-        var mouseX = event.clientX;
-        var mouseY = event.clientY;
+        var mouseX = event.clientX + window.scrollX;
+        var mouseY = event.clientY + window.scrollY;
 
         floatingDiv.style.left = mouseX + "px";
         floatingDiv.style.top = mouseY + "px";
-        floatingDiv.style.display = "block";
+
+        setTimeout(function () {
+          floatingDiv.style.opacity = "1";
+          floatingDiv.style.visibility = "visible";
+        }, 200);
 
         const url = "./data.json";
 
@@ -225,8 +257,16 @@
             nofa.innerHTML = "";
             oa.innerHTML = "";
             var floatingDiv = document.querySelector(".mouseOverData");
-            floatingDiv.style.display = "none";
+            floatingDiv.style.opacity = "0";
+            floatingDiv.style.visibility = "hidden";
           });
+      });
+      button.addEventListener("mouseleave", function (event) {
+        var floatingDiv = document.querySelector(".mouseOverData");
+        setTimeout(function () {
+        floatingDiv.style.opacity = "0";
+        floatingDiv.style.visibility = "hidden";
+      }, 199);
       });
     });
 
