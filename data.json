@@ -13,7 +13,7 @@
     }
   },
   "CE": {
-    "region": "Adamaoua",
+    "region": "Centre",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
@@ -31,7 +31,7 @@
     }
   },
   "ES": {
-    "region": "Adamaoua",
+    "region": "Est",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
@@ -43,7 +43,7 @@
     }
   },
   "EN": {
-    "region": "Adamaoua",
+    "region": "Extrême Nord",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
@@ -58,7 +58,7 @@
     }
   },
   "LT": {
-    "region": "Adamaoua",
+    "region": "Littoral",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
@@ -70,7 +70,7 @@
     }
   },
   "NO": {
-    "region": "Adamaoua",
+    "region": "Nord",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
@@ -82,7 +82,7 @@
     }
   },
   "NW": {
-    "region": "Adamaoua",
+    "region": "Nord-Ouest",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
@@ -97,7 +97,7 @@
     }
   },
   "OU": {
-    "region": "Adamaoua",
+    "region": "Ouest",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
@@ -113,7 +113,7 @@
     }
   },
   "SU": {
-    "region": "Adamaoua",
+    "region": "Sud",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
@@ -125,7 +125,7 @@
     }
   },
   "SW": {
-    "region": "Adamaoua",
+    "region": "Sud-Ouest",
     "numberOfBranchAgent": "",
     "numberOfFreeAgent": "",
     "onlineAgents": "",
