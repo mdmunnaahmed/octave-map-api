@@ -68,6 +68,7 @@ ul {
     padding-bottom: 170px;
     @media (max-width: 991px) {
         padding-bottom: 0;
+        overflow-x: hidden;
     }
 }
 .map-img-wrapper {
@@ -80,6 +81,20 @@ ul {
         margin-top: -33%;
     }
 
+    @media (max-width: 600px) {
+        transform: translateX(26%) scale(0.35);
+        margin-top: -60%;
+        // width: 297px !important;
+    }
+    @media (max-width: 410px) {
+        transform: translateX(27%) scale(0.33);
+        margin-top: -60%;
+    }
+    @media (max-width: 390px) {
+        transform: translateX(26%) scale(0.33);
+        margin-top: -70%;
+    }
+
     button {
         background-color: transparent;
         border: none;
@@ -90,52 +105,112 @@ ul {
         position: absolute;
         left: -20.8%;
         bottom: 161px;
+        @media (max-width: 575px) {
+            left: -38.8%;
+        }
+        @media (max-width: 400px) {
+            left: -41.8%;
+        }
     }
     .single-img3 {
         position: absolute;
         left: -39.3%;
         bottom: 3%;
+        @media (max-width: 575px) {
+            left: -73.3%;
+        }
+        @media (max-width: 400px) {
+            left: -79.3%;
+        }
     }
     .single-img4 {
         position: absolute;
         left: -67%;
         bottom: -0.6%;
+        @media (max-width: 575px) {
+            left: -125%;
+        }
+        @media (max-width: 400px) {
+            left: -136%;
+        }
     }
     .single-img5 {
         position: absolute;
         left: -63%;
         bottom: -12%;
+        @media (max-width: 575px) {
+            left: -117%;
+        }
+        @media (max-width: 400px) {
+            left: -128%;
+        }
     }
     .single-img6 {
         position: absolute;
         left: -56%;
         bottom: -36.1%;
+        @media (max-width: 575px) {
+            left: -104%;
+        }
+        @media (max-width: 400px) {
+            left: -113%;
+        }
     }
     .single-img7 {
         position: absolute;
         bottom: -55.9%;
         left: -16.5%;
+        @media (max-width: 575px) {
+            left: -31%;
+        }
+        @media (max-width: 405px) {
+            left: -35%;
+        }
+        @media (max-width: 399px) {
+            left: -33%;
+        }
     }
     .single-img8 {
         position: absolute;
         left: -86%;
         bottom: -25.3%;
+        @media (max-width: 575px) {
+            left: -160%;
+        }
+        @media (max-width: 400px) {
+            left: -175%;
+        }
     }
     .single-img9 {
         position: absolute;
         left: -71%;
         bottom: -34%;
+        @media (max-width: 575px) {
+            left: -132%;
+        }
+        @media (max-width: 400px) {
+            left: -144%;
+        }
     }
     .single-img10 {
         position: absolute;
         left: -63.2%;
         bottom: -49.3%;
+        @media (max-width: 575px) {
+            left: -117.2%;
+        }
+        @media (max-width: 400px) {
+            left: -128.2%;
+        }
     }
 }
 .map-content {
     padding-top: 50px;
     @media (max-width: 991px) {
         padding-top: 0;
+    }
+    @media (max-width: 575px) {
+        margin-top: -70px;
     }
     &__title {
         font-size: 32px;
@@ -231,11 +306,12 @@ ul {
 
 .map-table {
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     th {
         background-color: #70ad46;
         color: #fff;
-        padding-inline: 20px;
+        padding: 12px 20px;
+        line-height: 1.1;
     }
     tbody {
         tr {
@@ -273,7 +349,7 @@ ul {
     // position: absolute;
     opacity: 0;
     visibility: hidden;
-    transition: all .3s;
+    transition: all 0.3s;
     ul {
         font-size: 14px;
         li {
@@ -289,10 +365,17 @@ ul {
                     text-align: left;
                     color: #007bfc;
                     font-weight: 600;
-
                 }
             }
         }
     }
+}
+
+.realtime-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 330px;
+    margin-left: auto;
 }
 // map css style end
